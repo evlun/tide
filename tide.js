@@ -1,7 +1,7 @@
 // these have to match up with the cases in `local` and `utc`
-var tokens = ['DDth', 'DD', 'Dth', 'D', 'MM', 'M', 'YYYY', 'YY', 'hh', 'h',
-              'mm', 'm', 'ss', 's', 'mmms', 'ms', 'Weekday', 'Wkd', 'Month',
-              'Mnth', 'AM', 'am', 'zzzz', 'zz:zz']
+var tokens = ['DD', 'Dth', 'D', 'MM', 'M', 'YYYY', 'YY', 'hh', 'h', 'mm', 'm',
+              'ss', 's', 'mmms', 'ms', 'Weekday', 'Wkd', 'Month', 'Mnth', 'AM',
+              'am', 'zzzz', 'zz:zz']
   , match = new RegExp('\\b(' + tokens.join('|') + ')\\b', 'g');
 
 
@@ -12,7 +12,6 @@ function local(format, t) {
 
   return format.replace(match, function(match) {
     switch (match) {
-      case 'DDth':    return e.zerofill(e.suffix(t.getDate()));
       case 'DD':      return e.zerofill(t.getDate(), 2);
       case 'Dth':     return e.suffix(t.getDate());
       case 'D':       return t.getDate();
@@ -51,7 +50,6 @@ function utc(format, t) {
 
   return format.replace(match, function(match) {
     switch (match) {
-      case 'DDth':    return e.zerofill(e.suffix(t.getUTCDate()));
       case 'DD':      return e.zerofill(t.getUTCDate(), 2);
       case 'Dth':     return e.suffix(t.getUTCDate());
       case 'D':       return t.getUTCDate();

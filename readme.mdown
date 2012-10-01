@@ -1,0 +1,52 @@
+**tide** is a tiny tool for creating string representations of a) specific Date
+objects or b) the current time, relative to either the default timezone or UTC.
+
+### Usage
+
+```javascript
+var tide = require('tide');
+
+tide('Month Dth YYYY', new Date(0)); // -> "January 1st 1970"
+tide('Month Dth YYYY');              // -> "October 1st 2012"
+
+tide('hh:mm:ss zz:zz');              // -> "16:44:28 +01:00"
+tide.utc('hh:mm:ss zz:zz');          // -> "15:44:28 +00:00"
+```
+
+### Tokens
+
+<table>
+  <tr><td><code>D</code></td><td>day of the month</td><td>1, 2, 3, ..., 31</td></tr>
+  <tr><td><code>Dth</code></td><td>day of the month, with ordinal number suffix</td><td>1st, 2nd, 3rd, ..., 31st</td></tr>
+  <tr><td><code>DD</code></td><td>day of the month, with leading zero</td><td>01, 02, 03, ..., 31</td></tr>
+  <tr><td><code>M</code></td><td>month</td><td>1, 2, 3, ..., 12</td></tr>
+  <tr><td><code>MM</code></td><td>month, with leading zero</td><td>01, 02, 03, ..., 12</td></tr>
+  <tr><td><code>YYYY</code></td><td>full year</td><td>1968, 1969, 1970, ...</td></tr>
+  <tr><td><code>YY</code></td><td>last two digits of the year</td><td>68, 69, 70, ...</td></tr>
+  <tr><td><code>hh</code></td><td>hours (24-hour format)</td><td>00, 01, 02, ..., 23</td></tr>
+  <tr><td><code>h</code></td><td>hours (12-hour format)</td><td>12, 1, 2, ..., 11</td></tr>
+  <tr><td><code>m</code></td><td>minutes</td><td>0, 1, 2, ..., 59</td></tr>
+  <tr><td><code>mm</code></td><td>minutes, with leading zero</td><td>00, 01, 02, ..., 59</td></tr>
+  <tr><td><code>s</code></td><td>seconds</td><td>0, 1, 2, ..., 59</td></tr>
+  <tr><td><code>ss</code></td><td>seconds, with leading zero</td><td>00, 01, 02, ..., 59</td></tr>
+  <tr><td><code>ms</code></td><td>milliseconds</td><td>1, 2, 3, ..., 999</td></tr>
+  <tr><td><code>mmms</code></td><td>milliseconds, with leading zero(s)</td><td>000, 001, 002, ..., 999</td></tr>
+  <tr><td><code>Weekday</code></td><td>day of the week</td><td>Sunday, Monday, Tuesday, ..., Saturday</td></tr>
+  <tr><td><code>Wkd</code></td><td>day of the week (short)</td><td>Sun, Mon, Tue, ..., Sat</td></tr>
+  <tr><td><code>Month</code></td><td>name of month</td><td>January, February, March, ..., December</td></tr>
+  <tr><td><code>Mnth</code></td><td>name of month (short)</td><td>Jan, Feb, Mar, ..., Dec</td></tr>
+  <tr><td><code>am</code></td><td>am/pm</td><td>am, pm</td></tr>
+  <tr><td><code>AM</code></td><td>AM/PM</td><td>AM, PM</td></tr>
+  <tr><td><code>zzzz</code></td><td>timezone offset</td><td>-0100, +0000, +01:00, ...</td></tr>
+  <tr><td><code>zz:zz</code></td><td>timezone offset, with colon</td><td>-01:00, +00:00, +01:00, ...</td></tr>
+</table>
+
+### Installation
+
+```
+npm install tide
+```
+
+### License
+
+Public domain.

@@ -1,4 +1,4 @@
-// these have to match up with the cases in `apply`
+// these have to match up with the cases in `local` and `utc`
 var tokens = ['DDth', 'DD', 'Dth', 'D', 'MM', 'M', 'YYYY', 'YY', 'hh', 'h',
               'mm', 'm', 'ss', 's', 'mmms', 'ms', 'Weekday', 'Wkd', 'Month',
               'Mnth', 'AM', 'am', 'zzzz', 'zz:zz']

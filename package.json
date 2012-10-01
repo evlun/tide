@@ -1,5 +1,9 @@
 {
   "name": "tide",
-  "version": "0.0.0",
-  "author": "Erik Lundin"
+  "version": "0.0.1",
+  "description": "Simple date formatting",
+  "keywords": ["date", "time", "format", "print"],
+  "author": "Erik Lundin",
+  "homepage": "https://github.com/evlun/tide",
+  "main": "tide.js"
 }
